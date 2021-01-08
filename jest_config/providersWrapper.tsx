@@ -4,6 +4,7 @@ import { DeepPartial } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 
+import { FeatureFlagProvider } from '@services';
 import { AppState, createStore } from '@store';
 import { theme } from '@theme';
 
@@ -19,6 +20,8 @@ export const ProvidersWrapper = ({
   initialState?: DeepPartial<AppState>;
 }) => (
   <Provider store={createStore(initialState).store}>
-    <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    <FeatureFlagProvider>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    </FeatureFlagProvider>
   </Provider>
 );
