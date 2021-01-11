@@ -1,4 +1,4 @@
-declare module '@ledgerhq/hw-transport-node-hid-singleton' {
+declare module '@ledgerhq/hw-transport-node-hid-noevents' {
   import LedgerTransport, { Observer, DescriptorEvent, Subscription } from '@ledgerhq/hw-transport';
   import { HID, Device } from 'node-hid';
 
