@@ -27,10 +27,6 @@ const getProvider = (networkId: NetworkId, node: NodeOptions, chainId: number) =
     case NodeType.ETHERSCAN: {
       return new ethers.providers.EtherscanProvider(networkish, ETHERSCAN_API_KEY);
     }
-    case NodeType.WEB3: {
-      const ethereumProvider = (window as CustomWindow).ethereum;
-      return new ethers.providers.Web3Provider(ethereumProvider, networkish);
-    }
     case NodeType.INFURA:
       return new ethers.providers.InfuraProvider(networkish, INFURA_API_KEY);
 

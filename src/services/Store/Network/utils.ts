@@ -1,15 +1,6 @@
-import { ExtendedContact, Network, NodeOptions, NodeType } from '@types';
+import { ExtendedContact, Network, NodeOptions } from '@types';
 
 export abstract class NetworkUtils {
-  public static createWeb3Node = (): NodeOptions => ({
-    name: 'web3',
-    isCustom: false,
-    type: NodeType.WEB3,
-    url: '',
-    service: 'MetaMask / Web3',
-    hidden: true
-  });
-
   public static getSelectedNode = (network: Network): NodeOptions => {
     if (network.selectedNode) {
       const selectedNode = network.nodes.find((n) => n.name === network.selectedNode);
